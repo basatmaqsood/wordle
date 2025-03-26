@@ -50,6 +50,8 @@ nav {
   border: none;
   font-weight: bold;
   font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 nav h1 {
@@ -257,6 +259,28 @@ nav h1 {
     font-size: 30px;
   }
 }
+
+
+
+.install-button {
+  padding: 10px 8px;
+  /* width: 100px */
+  background-color: #FACC15;
+  color:#121212 ;
+  border: none;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 2rem;
+}
+
+.install-button:hover, .toggle-button:hover {
+
+  background-color: #FFD700;
+
+} 
+
 
 .gameOver {
   display: flex;

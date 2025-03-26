@@ -7,6 +7,7 @@ import { createContext } from "react";
 import GameOver from "./components/gameOver";
 import todaysWord from "./words"
 import HowItWorks from "./components/HowItWorks";
+import { InstallButton } from "./components/InstallButton";
 
 
 export const AppContext = createContext();
@@ -118,6 +119,9 @@ function App() {
             <HowItWorks setSection={setSection} />
             : null
       }
+      
+              <InstallButton/>
+
       <h2 className="tag-line">Developed with ❤ by <a target="_blank" href="https://www.basatmaqsood.live">Basat Maqsood</a></h2>
       <a className="visit" target="_blank" href="https://www.basatmaqsood.live">Click here to Visit me</a>
     </div>
