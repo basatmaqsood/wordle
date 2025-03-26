@@ -49,14 +49,14 @@ function App() {
     }
     // console.log(currWord.toLowerCase());
     console.log(wordSet)
-    if (wordSet.has(`${currWord.toLowerCase()}\r`)) {
+    if (wordSet.has(`${currWord.toLowerCase()}\r`) || wordSet.has(`${currWord.toLowerCase()}`)) {
       setcurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
     } else {
       alert("Words not Found");
     }
 
 
-    if(`${currWord.toLowerCase()}\r` === correctWord){
+    if(`${currWord.toLowerCase()}\r` === correctWord || `${currWord.toLowerCase()}` === correctWord){
       setGameOver({gameOver:true, guessedWord:true})
       // console.log("hi");
       return;
