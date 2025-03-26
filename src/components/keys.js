@@ -5,9 +5,9 @@ function Keys({ keyval, bigkey, disabled }) {
   const { handleDelete, handleEnter, handleSetLetter } = useContext(AppContext);
 
   function selectLetter() {
-    if (keyval === "Enter") {
+    if (keyval === "⏎") {
       handleEnter();
-    } else if (keyval === "Delete") {
+    } else if (keyval === "⌫") {
       handleDelete();
     } else {
       handleSetLetter(keyval);

@@ -6,11 +6,13 @@ import { Keyboard } from "./components/keyboard";
 import { createContext } from "react";
 import GameOver from "./components/gameOver";
 import todaysWord from "./words"
+import HowItWorks from "./components/HowItWorks";
 
 
 export const AppContext = createContext();
 
 function App() {
+  const [section, setSection] = useState("game");
   const [board, setBoard] = useState(boardDefault);
   const [currAttempt, setcurrAttempt] = useState({ attempt: 0, letterPos: 0 });
   const [wordSet, setWordSet] = useState(new Set());
@@ -31,20 +33,30 @@ function App() {
     });
   }, []);
 
+  function toggleSection(){
+    if(section === "game"){
+      setSection("how");
+    }
+    else if (section === "how"){
+      setSection("game");
+  }
+  }
   function handleEnter() {
     if (currAttempt.letterPos !== 5) return;
     let currWord = "";
     for (let i = 0; i < 5; i++) {
       currWord += board[currAttempt.attempt][i];
     }
-    console.log(currWord);
-    if (wordSet.has(currWord.toLowerCase())) {
+    console.log(currWord.toLowerCase());
+    console.log(wordSet)
+    if (wordSet.has(`${currWord.toLowerCase()}\r`)) {
       setcurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
     } else {
       alert("Words not Found");
     }
 
-    if(currWord.toLowerCase() === correctWord){
+
+    if(`${currWord.toLowerCase()}\r` === correctWord){
       setGameOver({gameOver:true, guessedWord:true})
       console.log("hi");
       return;
@@ -73,10 +85,15 @@ function App() {
   }
   return (
     <div className="App">
+      {/* <HowItWorks/> */}
+
       <nav>
         <h1>Wordle</h1>
+      <button className="toggle-button" onClick={() => toggleSection()}>{section == 'game' ? 'How to Play':'Let\'s Play'}</button>
       </nav>
-      <div className="app-center">
+      {
+        section === "game" ?
+        <div className="app-center">
         <AppContext.Provider
           value={{
             correctWord,
@@ -97,6 +114,11 @@ function App() {
           {gameOver.gameOver?<GameOver/> :<Keyboard />}
         </AppContext.Provider>
       </div>
+          : section === "how" ?
+            <HowItWorks setSection={setSection} />
+            : null
+      }
+
     </div>
   );
 }

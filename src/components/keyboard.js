@@ -53,13 +53,15 @@ export function Keyboard() {
         {keys2.map((key) => {
           return <Keys keyval={key} disabled={disabled.includes(key)} />;
         })}
+        <Keys keyval={"⌫"} bigkey />
       </div>
       <div className="line3">
-        <Keys keyval={"Enter"} bigkey />
         {keys3.map((key) => {
+
           return <Keys keyval={key} disabled={disabled.includes(key)} />;
         })}
-        <Keys keyval={"Delete"} bigkey />
+        <Keys keyval={"⏎"} bigkey />
+
       </div>
     </div>
   );
