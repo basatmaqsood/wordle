@@ -27,7 +27,7 @@ function App() {
   useEffect(function () {
     generateWordSet().then((words) => {
       // console.log(words.wordSet);
-      console.log(words.todaysWord);
+      // console.log(words.todaysWord);
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
     });
@@ -47,8 +47,8 @@ function App() {
     for (let i = 0; i < 5; i++) {
       currWord += board[currAttempt.attempt][i];
     }
-    console.log(currWord.toLowerCase());
-    console.log(wordSet)
+    // console.log(currWord.toLowerCase());
+    // console.log(wordSet)
     if (wordSet.has(`${currWord.toLowerCase()}\r`)) {
       setcurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
     } else {
@@ -58,7 +58,7 @@ function App() {
 
     if(`${currWord.toLowerCase()}\r` === correctWord){
       setGameOver({gameOver:true, guessedWord:true})
-      console.log("hi");
+      // console.log("hi");
       return;
     }
     if(currAttempt.attempt === 5){
@@ -88,7 +88,7 @@ function App() {
       {/* <HowItWorks/> */}
 
       <nav>
-        <h1>Wordle</h1>
+        <h1><a href="/">Wordle</a></h1>
       <button className="toggle-button" onClick={() => toggleSection()}>{section == 'game' ? 'How to Play':'Let\'s Play'}</button>
       </nav>
       {
@@ -118,7 +118,8 @@ function App() {
             <HowItWorks setSection={setSection} />
             : null
       }
-
+      <h2 className="tag-line">Developed with ❤ by <a target="_blank" href="https://www.basatmaqsood.live">Basat Maqsood</a></h2>
+      <a className="visit" target="_blank" href="https://www.basatmaqsood.live">Click here to Visit me</a>
     </div>
   );
 }

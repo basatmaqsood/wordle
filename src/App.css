@@ -4,16 +4,20 @@
   /* overflow-x: hidden; */
 
 }
+:root{
+  background-color: #121212;
+
+}
 
 .App {
   text-align: center;
-  background-color: #121212;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 
   /* display: flex; */
   color: white;
+  /* padding-bottom: 1rem; */
 }
 .app-center{
   display: flex;
@@ -24,7 +28,10 @@ body {
   padding: 0%;
   margin: 0;
 }
-
+a{
+  text-decoration: none;
+  color: #FACC15;
+}
 nav {
   height: 60px;
   width: 100%;
@@ -48,9 +55,7 @@ nav {
 nav h1 {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
-  color: white;
   font-size: 45px;
-  color: #FACC15;
 }
 .game {
   width: 100vw;
@@ -329,8 +334,46 @@ nav h1 {
   }
 }
 
+.tag-line, .visit {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+.visit{
+  background-color: #FACC15;
+  color: #1a1a1a;
+  padding: 5px 10px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
 
 
 
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 8px;  /* Width for vertical scrollbar */
+  height: 8px; /* Height for horizontal scrollbar */
+}
 
+/* Scrollbar Thumb (Draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #444;  /* Dark gray thumb */
+  border-radius: 6px;
+  /* transition: background 0.3s; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666; /* Lighter gray on hover */
+}
+
+/* Scrollbar Track (Background) */
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Match the dark theme */
+  border-radius: 6px;
+}
+
+/* Scrollbar Corner */
+::-webkit-scrollbar-corner {
+  background: #1a1a1a;
+}
 
