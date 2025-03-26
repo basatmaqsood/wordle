@@ -27,7 +27,7 @@ function App() {
   useEffect(function () {
     generateWordSet().then((words) => {
       // console.log(words.wordSet);
-      // console.log(words.todaysWord);
+      console.log(words.todaysWord);
       setWordSet(words.wordSet);
       setCorrectWord(words.todaysWord);
     });
@@ -48,7 +48,7 @@ function App() {
       currWord += board[currAttempt.attempt][i];
     }
     // console.log(currWord.toLowerCase());
-    // console.log(wordSet)
+    console.log(wordSet)
     if (wordSet.has(`${currWord.toLowerCase()}\r`)) {
       setcurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
     } else {
